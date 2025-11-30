@@ -11,7 +11,11 @@
 - build the user card and implemented real time profile update available to user to see the changes parallel  
 - show toast message on updating profile successfully  
 - connections to see all the connections user have 
-
+- feature to see all connection requests
+- feature to accept/reject connection request
+- send/ignore the user card from feed
+- added dynamic toast feature for login and sign up form 
+- feature added to remove users from feed (created feed Slice in app store to manage feed)
 
 Body
     NavBar

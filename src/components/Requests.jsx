@@ -39,7 +39,7 @@ const Requests = () => {
             {requests.map((request)=>{
                 
                 return(
-                    <div key={request.fromUserId._id} className="flex justify-between items-center m-4 p-4 rounded-lg bg-base-300 w-2/3 mx-auto">
+                    <div key={request.fromUserId._id} className="flex justify-between items-center m-4 p-4 rounded-lg bg-base-300 w-3/4 mx-auto">
                         <div>
                             <img alt="image"  className="w-20 h-20 rounded-full"  src= {request.fromUserId.photoUrl}/>
                         </div>
