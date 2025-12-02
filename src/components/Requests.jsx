@@ -14,7 +14,8 @@ const Requests = () => {
             const res = axios.post(API_BASE_URL + "/request/review/"+status+"/"+_id,{},{withCredentials:true});
             dispatch(removeRequest(_id));
         }catch(err){
-
+            if(err.status == 401)navigate("/login");
+            console.log("Error fetching user data", err);
         }
     }
 
@@ -24,7 +25,8 @@ const Requests = () => {
             const res = await axios.get(API_BASE_URL + "/user/requests/received", {withCredentials:true});
             dispatch(addRequests(res.data.data));
         }catch(err){
-
+            if(err.status == 401)navigate("/login");
+            console.log("Error fetching user data", err);
         }
     }
     useEffect(()=>{

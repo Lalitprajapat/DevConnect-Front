@@ -15,7 +15,8 @@ const NavBar = () => {
         dispatch(removeUser());
         return navigate("/login")
       }catch(err){
-
+        if(err.status == 401)navigate("/login");
+        console.log("Error fetching user data", err);
       }
     }
 

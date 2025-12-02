@@ -13,7 +13,8 @@ const Connections = () => {
             // console.log(res,data.data);
             dispatch(addConnections(res?.data?.data))
         }catch(err){
-
+            if(err.status == 401)navigate("/login");
+            console.log("Error fetching user data", err);
         }
     };
     useEffect(()=>{

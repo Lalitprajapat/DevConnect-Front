@@ -11,7 +11,8 @@ const UserCard = ({user}) =>{
             const res = await axios.post(API_BASE_URL+"/request/send/"+ status+"/"+userId, {}, {withCredentials:true});
             dispatch(removeUserFromFeed(userId));
         }catch(err){
-
+            if(err.status == 401)navigate("/login");
+            console.log("Error fetching user data", err);
         }
     }
     
