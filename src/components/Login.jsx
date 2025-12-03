@@ -24,10 +24,10 @@ const Login = () =>{
             console.log("Login successful:", res.data);
             dispatch(addUser(res.data));
             return navigate('/');
-        } catch (error) {
+        } catch (err) {
 
-            setError(err?.response?.data||"Login failed", err);
-            console.log("err failed bcz of "+ error);
+            setError(err?.response?.data||"Login failed");
+            console.log("err failed bcz of "+ err);
             
         }    
     };
@@ -36,10 +36,10 @@ const Login = () =>{
             const res = await axios.post(API_BASE_URL+"/signup",
                 {firstName, lastName, emailId, password}, {withCredentials:true}
             );
-            dispatch(addUser(res.data,data));
+            dispatch(addUser(res.data.data));
             return navigate("/profile");
         }catch(err){
-            setError(err?.response?.data||"SignUp failed", err);
+            setError(err?.response?.data||"SignUp failed");
         }
     };
 

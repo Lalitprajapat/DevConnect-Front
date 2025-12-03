@@ -2,11 +2,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { API_BASE_URL } from "../utils/constants";
 import { useEffect } from "react";
 import { addConnections } from "../utils/connectionSlice";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Connections = () => {
 
-    const connections = useSelector((store)=>store.connections);
+    const connections = useSelector((store)=>store.connection);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const fetchConnections = async () => {
         try{
             const res = await axios.get(API_BASE_URL+"/user/connections",{withCredentials:true});
@@ -21,7 +24,7 @@ const Connections = () => {
         fetchConnections();
     },[]);
 
-    if(!connections)return;
+    if(!connections)return <h2>Loading...</h2>;
     if(connections.length === 0)return <h2>No Connections found</h2>
     return(
         <div  className="text-center my-10">

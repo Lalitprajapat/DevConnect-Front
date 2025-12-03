@@ -2,11 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { API_BASE_URL } from "../utils/constants";
 import { addRequests, removeRequest } from "../utils/requestSlice";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Requests = () => {
-    const requests = useSelector((store)=>store.requests);
+    const requests = useSelector((store)=>store.request);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
    
 
     const reviewRequest = async (status, _id) => {
@@ -23,7 +25,7 @@ const Requests = () => {
         try{
 
             const res = await axios.get(API_BASE_URL + "/user/requests/received", {withCredentials:true});
-            dispatch(addRequests(res.data.data));
+            dispatch(addRequests(res?.data?.data));
         }catch(err){
             if(err.status == 401)navigate("/login");
             console.log("Error fetching user data", err);

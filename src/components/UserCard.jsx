@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { API_BASE_URL } from "../utils/constants";
 import { removeUserFromFeed } from "../utils/feedSlice";
+import axios from "axios";
 
 
 const UserCard = ({user}) =>{
