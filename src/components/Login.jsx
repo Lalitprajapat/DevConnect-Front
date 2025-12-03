@@ -27,6 +27,7 @@ const Login = () =>{
         } catch (error) {
 
             setError(err?.response?.data||"Login failed", err);
+            console.log("err failed bcz of "+ error);
             
         }    
     };
