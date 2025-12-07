@@ -1,25 +1,19 @@
-# React + Vite
+## 🌐 DevConnect-Frontend (React + Vite + Redux Toolkit)
 
-- Created a React + vite application for DevConnect frontend implementation
-- CORS added CORS in Backend and added middleware with origin configuration
-- added react-redux toolkit to implement react store 
-- added slices for different use cases for configured store
-- added NavBar update as soon as user log in 
-- Refactored code to add add constants file + created a component folder
-- implemented check for token to see if user is logged in or not if not then redirect to login page 
-- added feed in the store 
-- build the user card and implemented real time profile update available to user to see the changes parallel  
-- show toast message on updating profile successfully  
-- connections to see all the connections user have 
-- feature to see all connection requests
-- feature to accept/reject connection request
-- send/ignore the user card from feed
-- added dynamic toast feature for login and sign up form 
-- feature added to remove users from feed (created feed Slice in app store to manage feed)
+The DevConnect frontend is built using React (Vite) with Redux Toolkit for state
+management. It includes protected routes, dynamic UI updates, real-time profile
+previews, and complete connection request handling.
 
-Body
-    NavBar
-    Route = '/' => feed
-    Route = '/login' => login
-    Route = '/connections' => connections
-    Route = '/profile' => profile
+### Key Frontend Features:
+- React + Vite application architecture
+- CORS support added in backend with origin configuration
+- Redux Toolkit store with multiple slices (user, feed, requests, profile)
+- Auto-updating NavBar when user logs in
+- Token verification to redirect unauthorized users
+- Feed stored globally and updated in real-time
+- Profile page with live user card updates
+- Toast notifications for login, signup, and profile update
+- View connections & connection requests
+- Accept/Reject requests
+- Send/Ignore users from feed
+- Dynamic, reusable UI components
